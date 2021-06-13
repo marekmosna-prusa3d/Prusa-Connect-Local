@@ -8,7 +8,11 @@ import { handleError } from "../components/errors.js";
 import { translate } from "../../locale_provider";
 
 const update = (data) => {
-  updateProperties("job", data);
+  if (data.state != states.PRINTING) {
+    to_page(data.state);
+  } else {
+    load();
+  }
 };
 
 export const load = () => {
@@ -20,7 +24,7 @@ export const load = () => {
       if (completion) {
         document.querySelector("progress").value = completion;
       }
-      update(data);
+      updateProperties("job", data);
     })
     .catch((result) => handleError(result));
 };

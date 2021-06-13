@@ -75,7 +75,7 @@ class Preprocess {
           // more than 1: save in /views/{filename}
           let assets_view_path = path.join(this.output_dir, filename);
           fs.writeFileSync(assets_view_path, svg);
-          this.assets[filename] = "./" + filename;
+          this.assets[filename] = filename;
         } else {
           // only 1: save as data source
           this.assets[filename] = svgToMiniDataURI(svg);

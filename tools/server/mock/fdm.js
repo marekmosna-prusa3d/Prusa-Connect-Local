@@ -43,6 +43,16 @@ class PrinterFDM extends Printer {
 
     return printerStatus;
   }
+
+  version() {
+    return {
+      api: "0.1",
+      server: "2.0.0",
+      text: "Prusa MINI 2.0.0",
+      hostname: `prusa-mini`,
+    };
+  }
+
 }
 
 module.exports = PrinterFDM;

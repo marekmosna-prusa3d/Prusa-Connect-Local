@@ -32,7 +32,7 @@ module.exports = (env, args) => {
   } /* (printer_conf.type == "mini") */ else {
     printer_conf["title"] = "Original Prusa Mini";
     printer_conf["printerFamily"] = "fdm";
-    icons = { from: "./src/assets/icons/favicon-32x32.png", to: "./" };
+    icons = { from: "./src/assets/icons/favicon.ico", to: "./" };
   }
 
   if (buildLocales) {
